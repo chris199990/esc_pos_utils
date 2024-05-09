@@ -835,5 +835,14 @@ class Generator {
     bytes += emptyLines(linesAfter + 1);
     return bytes;
   }
+
+  int reverseFeed(List<int> bytes) {
+  int n = 0;
+  if (bytes.isNotEmpty && bytes.length <= 2) {
+    Uint8List uint8List = Uint8List.fromList(bytes);
+    n = uint8List.last;
+  }
+  return n;
+}
   // ************************ (end) Internal command generators ************************
 }
