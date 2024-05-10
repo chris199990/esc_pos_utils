@@ -77,8 +77,9 @@ class Generator {
     if (!isKanji) {
       return latin1.encode(text);
     } else {
-      if(cTable != 'GB2312') {return Uint8List.fromList(big5.encode(text));}
-      if(cTable == 'GB2312') {return Uint8List.fromList(gbk_bytes.encode(text));}
+      //if(cTable != 'GB2312') {return Uint8List.fromList(big5.encode(text));}
+      //if(cTable == 'GB2312') {return Uint8List.fromList(gbk_bytes.encode(text));}
+      return Uint8List.fromList(gbk_bytes.encode(text));
     }
   }
 
@@ -349,7 +350,6 @@ class Generator {
     int linesAfter = 0,
     bool containsChinese = false,
     int? maxCharsPerLine,
-    String cTable,
   }) {
     List<int> bytes = [];
     if (!containsChinese) {
