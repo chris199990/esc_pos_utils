@@ -66,7 +66,7 @@ class Generator {
     return charsPerLine;
   }
 
-  Uint8List _encode(String text, {bool isKanji = false, String? cTable}) {
+  Uint8List _encode(String text, {bool isKanji = false, String? cTable = 'big5'}) {
     // replace some non-ascii characters
     text = text
         .replaceAll("’", "'")
