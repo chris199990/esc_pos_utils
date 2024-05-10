@@ -359,7 +359,7 @@ class Generator {
         maxCharsPerLine: maxCharsPerLine,
       );
       // Ensure at least one line break after the text
-      //bytes += emptyLines(linesAfter + 10);
+      bytes += emptyLines(linesAfter + 10);
     } else {
       bytes += _mixedKanji(text, styles: styles, linesAfter: linesAfter);
     }
