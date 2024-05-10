@@ -66,7 +66,7 @@ class Generator {
     return charsPerLine;
   }
 
-  Uint8List _encode(String text, {bool isKanji = false, String? cTable}) {
+  Uint8List _encode(String text, {bool isKanji = false, required String cTable}) {
     // replace some non-ascii characters
     text = text
         .replaceAll("’", "'")
@@ -349,7 +349,7 @@ class Generator {
     int linesAfter = 0,
     bool containsChinese = false,
     int? maxCharsPerLine,
-    String? cTable,
+    required String cTable,
   }) {
     List<int> bytes = [];
     if (!containsChinese) {
